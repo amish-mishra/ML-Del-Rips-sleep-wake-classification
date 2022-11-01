@@ -127,3 +127,7 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+CGMH_preprocessed_data
+CGMH_processed_data
+delete_rows.py
