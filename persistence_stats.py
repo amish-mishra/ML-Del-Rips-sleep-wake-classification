@@ -2,9 +2,9 @@
 # Date: April 27, 2022
 # README: This file generates all Persistence statistics for the input data after performing a delay embedding
 # We caculate mean, standard deviation, skewness, kurtosis, 25th, 50th, 75th percentile, and the persistent entropy 
-# for the set M and L where M = {(d+b)/2} and L = {d-b} with (b,d) \in PD
+# for each of the sets M and L where M = {(d+b)/2} and L = {d-b} where (b,d) is a persistence pair
 
-# import required module
+
 import os
 import pandas
 import matplotlib.pyplot as plt
