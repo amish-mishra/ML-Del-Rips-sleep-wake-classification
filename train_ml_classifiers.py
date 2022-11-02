@@ -21,11 +21,6 @@ def train_ml_classifiers(func):
     raw_training_data.loc[raw_training_data['sleep_stage'] != 1, 'sleep_stage'] = 0
     raw_training_data = raw_training_data.iloc[:, 1:]   # remove patient column
 
-    # Train classifier
-    classifiers_arr = [None]
-    all_wake = raw_training_data[raw_training_data['sleep_stage'] == 1]
-    num_wake = len(all_wake)
-
     # Separate the sleep_stage column
     X_train = raw_training_data.iloc[:, 1:]
     y_train = raw_training_data['sleep_stage']
@@ -36,14 +31,13 @@ def train_ml_classifiers(func):
     # print(clf.class_weight_) # See the class weights that were auto-set
 
     # Save classifier
-    classifiers_arr[0] = clf
-    print(classifiers_arr)
+    print(clf)
     print(f'########## Done training Classifier ###########')
-    # with open(f"ml_classifiers/{func}_svm_classifier", "wb") as output:
-    #     pickle.dump(classifiers_arr, output)
+    with open(f"ml_classifiers/{func}_svm_classifier", "wb") as output:
+        pickle.dump(clf, output)
 
 
 if __name__ == '__main__':
     func_arr = ['rips', 'alpha', 'del_rips']
     for func in func_arr:
-        generate_ml_classifiers(func)
+        train_ml_classifiers(func)

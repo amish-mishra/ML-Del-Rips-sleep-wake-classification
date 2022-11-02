@@ -39,7 +39,6 @@ def metrics_from_confusion_matrix(cm, y_test, y_pred_prob, verbose=True):
             accuracy, precision, f1_score, auc, aps, kappa]
 
 
-
 def validate_ml_classifiers(func):
     print(f'Validating {func} svm...')
     # For reference: stages = ['rem', 'wake', 's1', 's2', 's3', 's4']
@@ -71,3 +70,9 @@ def validate_ml_classifiers(func):
     print(metrics_df)
     metrics_df.to_pickle(f'performance_metrics_tables/perf_metrics_{func}_svm_classifier.pkl')
     print(f'Performance metrics dataframe built and saved for {func} svm')
+
+
+if __name__ == '__main__':
+    func_arr = ['rips', 'alpha', 'del_rips']
+    for func in func_arr:
+        validate_ml_classifiers(func)
