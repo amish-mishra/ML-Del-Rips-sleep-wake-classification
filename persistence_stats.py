@@ -235,15 +235,15 @@ def generate_pers_stats_table(directory, filtration_method, max_num_files, dimen
     return df
 
 
-def generate_training_validation_pers_stats(t, m):
-    print(f'=========== Generating {t} data persistence stats ===========')
-    print(f'---- Using {m} ----')
+def generate_training_validation_pers_stats(type_of_data, method):
+    print(f'=========== Generating {type_of_data} data persistence stats ===========')
+    print(f'---- Using {method} ----')
     dim = 3
-    data_table = generate_pers_stats_table(directory=f'CGMH_preprocessed_data/{t}', filtration_method=m,
+    data_table = generate_pers_stats_table(directory=f'CGMH_preprocessed_data/{type_of_data}', filtration_method=method,
                                         max_num_files=90, dimension=dim, verbose=True)
     print(data_table)
-    # data_table.to_pickle(f'persistence_statistics/{t.lower()}_embed_dim_{dim}_pers_stats_{m}.pkl')
-    print(f'Finished making {t.lower()}_embed_dim_{dim}_pers_stats_{m}.pkl')
+    data_table.to_pickle(f'persistence_statistics/{type_of_data.lower()}_embed_dim_{dim}_pers_stats_{method}.pkl')
+    print(f'Finished making {type_of_data.lower()}_embed_dim_{dim}_pers_stats_{method}.pkl')
 
 if __name__ == '__main__':
     types = ['Training', 'Validation']

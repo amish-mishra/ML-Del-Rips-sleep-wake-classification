@@ -62,8 +62,8 @@ def validate_ml_classifiers(func):
         X = validation_data[validation_data['patient'] == p]
         X_test = X.iloc[:, 2:]
         y_test = X['sleep_stage']
-        pred = classifier[0].predict(X_test)
-        y_pred_prob = classifier[0].predict_proba(X_test)
+        pred = classifier.predict(X_test)
+        y_pred_prob = classifier.predict_proba(X_test)
         cm = metrics.confusion_matrix(y_test, pred, labels=[0, 1])
         metrics_vect = metrics_from_confusion_matrix(cm, y_test, y_pred_prob, verbose=False)
         metrics_df[p] = metrics_vect
