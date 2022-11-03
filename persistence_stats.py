@@ -149,8 +149,12 @@ def calculate_8_stats(arr):
     if np.any(arr): # If the arr is non-empty, then compute the stats; otherwise, leave as 0's
         avg = np.mean(arr)
         std_dev = np.std(arr)
-        skew = stats.skew(arr)
-        kurtosis = stats.kurtosis(arr)
+        if len(arr) == 1:   # Array only has one point, so skew and kurtosis cannot be calculated
+                skew = 0
+                kurtosis = 0
+        else:
+            skew = stats.skew(arr)
+            kurtosis = stats.kurtosis(arr)
         percentile_25 = np.percentile(arr, 25)
         percentile_50 = np.percentile(arr, 50)
         percentile_75 = np.percentile(arr, 75)
@@ -216,10 +220,10 @@ def generate_pers_stats_table(directory, filtration_method, max_num_files, dimen
             print('Loading', filename)
             data = pandas.read_csv(filename, header=None).iloc[:, :]
             for c in data:
-                if patient == 3 and c == 222:
-                    continue    # skip this patient's 222 epoch due to problems with degenerate facets in del-triangulation
+                # if patient == 3 and c == 222:
+                #     continue    # skip this patient's 222 epoch due to problems with degenerate facets in del-triangulation
                 # embed data one epoch at a time
-                epoch_data = data[c][:120]
+                epoch_data = data[c]
                 curr_sleep_stage = stages_dict[data[c][120]]
                 embedded_data = delay_embedding(epoch_data, dimen=dimension, delay=5, stride=1)
                 # plot(embedded_data, title=curr_sleep_stage)
