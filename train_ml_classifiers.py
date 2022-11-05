@@ -14,7 +14,7 @@ def train_ml_classifiers(func):
     print(f'Training classifer based on {func}')
     # Load in data
     raw_training_data = pandas.read_pickle(
-        f'persistence_statistics/training_data_embed_dim_3_pers_stats_{func}.pkl')
+        f'persistence_statistics/training_embed_dim_3_pers_stats_{func}.pkl')
     raw_training_data = raw_training_data.dropna()
 
     # Make data wake = 1 and sleep = 0

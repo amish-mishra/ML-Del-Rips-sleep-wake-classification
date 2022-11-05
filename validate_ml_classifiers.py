@@ -44,7 +44,7 @@ def validate_ml_classifiers(func):
     # For reference: stages = ['rem', 'wake', 's1', 's2', 's3', 's4']
     # Load in data and classfiers
     validation_data = pandas.read_pickle(
-        f'persistence_statistics/validation_data_embed_dim_3_pers_stats_{func}.pkl')
+        f'persistence_statistics/validation_embed_dim_3_pers_stats_{func}.pkl')
     validation_data = validation_data.dropna()
     with open(f"ml_classifiers/{func}_svm_classifier", "rb") as data:
         classifier = pickle.load(data)

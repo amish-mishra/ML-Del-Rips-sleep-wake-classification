@@ -150,8 +150,8 @@ def calculate_8_stats(arr):
         avg = np.mean(arr)
         std_dev = np.std(arr)
         if len(arr) == 1:   # Array only has one point, so skew and kurtosis cannot be calculated
-                skew = 0
-                kurtosis = 0
+            skew = 0
+            kurtosis = 0
         else:
             skew = stats.skew(arr)
             kurtosis = stats.kurtosis(arr)
@@ -214,10 +214,9 @@ def generate_pers_stats_table(directory, filtration_method, max_num_files, dimen
 
     for patient in range(1, max_num_files+1):
         filename = f'{directory}/{patient}.csv'
-        print(filename)
         if os.path.isfile(filename):
             tic = time.time() # Track runtime if wanted
-            print('Loading', filename)
+            if verbose: print('Loading', filename)
             data = pandas.read_csv(filename, header=None).iloc[:, :]
             for c in data:
                 # if patient == 3 and c == 222:
@@ -235,16 +234,16 @@ def generate_pers_stats_table(directory, filtration_method, max_num_files, dimen
             if verbose: print('Runtime for processing this file:', run_time)
     df = pandas.DataFrame(pers_stats_arr)
     df.rename(columns={0: 'patient', 1: 'sleep_stage'}, inplace=True)
-    print(df) if verbose else ''
+    if verbose: print(df)
     return df
 
 
-def generate_training_validation_pers_stats(type_of_data, method):
+def generate_training_validation_pers_stats(type_of_data, method, verbose=True):
     print(f'=========== Generating {type_of_data} data persistence stats ===========')
     print(f'---- Using {method} ----')
     dim = 3
     data_table = generate_pers_stats_table(directory=f'CGMH_preprocessed_data/{type_of_data}', filtration_method=method,
-                                        max_num_files=90, dimension=dim, verbose=True)
+                                        max_num_files=90, dimension=dim, verbose=verbose)
     print(data_table)
     data_table.to_pickle(f'persistence_statistics/{type_of_data.lower()}_embed_dim_{dim}_pers_stats_{method}.pkl')
     print(f'Finished making {type_of_data.lower()}_embed_dim_{dim}_pers_stats_{method}.pkl')
