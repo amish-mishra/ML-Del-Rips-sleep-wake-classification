@@ -33,8 +33,10 @@ def train_ml_classifiers(func):
     # Save classifier
     print(clf)
     print(f'########## Done training Classifier ###########')
-    with open(f"ml_classifiers/{func}_svm_classifier", "wb") as output:
+    target_location = f"ml_classifiers/{func}_svm_classifier.pkl"
+    with open(target_location, "wb") as output:
         pickle.dump(clf, output)
+        print("Classifiers saved in", target_location)
 
 
 if __name__ == '__main__':

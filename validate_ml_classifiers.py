@@ -68,8 +68,9 @@ def validate_ml_classifiers(func):
         metrics_vect = metrics_from_confusion_matrix(cm, y_test, y_pred_prob, verbose=False)
         metrics_df[p] = metrics_vect
     print(metrics_df)
-    metrics_df.to_pickle(f'performance_metrics_tables/perf_metrics_{func}_svm_classifier.pkl')
-    print(f'Performance metrics dataframe built and saved for {func} svm')
+    target_location = f'performance_metrics_tables/perf_metrics_{func}_svm_classifier.pkl'
+    metrics_df.to_pickle(target_location)
+    print('Performance metrics table saved in', target_location)
 
 
 if __name__ == '__main__':

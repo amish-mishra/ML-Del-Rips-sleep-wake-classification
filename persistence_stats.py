@@ -245,8 +245,9 @@ def generate_training_validation_pers_stats(type_of_data, method, verbose=True):
     data_table = generate_pers_stats_table(directory=f'CGMH_preprocessed_data/{type_of_data}', filtration_method=method,
                                         max_num_files=90, dimension=dim, verbose=verbose)
     print(data_table)
-    data_table.to_pickle(f'persistence_statistics/{type_of_data.lower()}_embed_dim_{dim}_pers_stats_{method}.pkl')
-    print(f'Finished making {type_of_data.lower()}_embed_dim_{dim}_pers_stats_{method}.pkl')
+    target_location = f'persistence_statistics/{type_of_data.lower()}_embed_dim_{dim}_pers_stats_{method}.pkl'
+    data_table.to_pickle(target_location)
+    print('Data frame saved to', target_location)
 
 if __name__ == '__main__':
     types = ['Training', 'Validation']
