@@ -15,4 +15,5 @@ dependencies:
     - cython
     - ripser==0.6.4
     - pingouin==0.3.4
+    - pickle
     - jupyter
