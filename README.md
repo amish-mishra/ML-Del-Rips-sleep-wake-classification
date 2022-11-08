@@ -1,13 +1,13 @@
 ## Overview
-This repository demonstrates the application of Delaunay-Rips complex by classifying a patient's sleep stage as sleep/wake based on heart rate data.  
-The data analysis pipeline is inspired by the work of Chung, Hu, and Wu from the paper† [A Persistent Homology Approach to Heart Rate Variability Analysis With an Application to Sleep-Wake Classification](https://www.frontiersin.org/articles/10.3389/fphys.2021.637684/full). With permission from those authors, the processed CGMH heart rate data used for training and validation is found in .csv files in [CGMH_preprocessed_data](CGMH_preprocessed_data).
+**This repository demonstrates the application of the Delaunay-Rips complex by classifying a patient's sleep stage as sleep/wake based on heart rate data.**  
+The file [main.ipynb](main.ipynb) guides the user through the process of reproducing the results of our data analysis.   _Note: the whole notebook may take nearly a day to run depending on the processing power of the hardware._  
 
-The file [main.ipynb](main.ipynb) guides the user through the process of reproducing the results of our data analysis.   _Note: the whole notebook may take nearly a day to run depending on the processing power of the hardware._
+The data analysis pipeline is inspired by the work of Chung, Hu, and Wu from the paper† [A Persistent Homology Approach to Heart Rate Variability Analysis With an Application to Sleep-Wake Classification](https://www.frontiersin.org/articles/10.3389/fphys.2021.637684/full). With permission from those authors, the processed CGMH heart rate data used for training and validation is found in .csv files in [CGMH_preprocessed_data](CGMH_preprocessed_data).
 
 **†Chung Y-M, Hu C-S, Lo Y-L and Wu H-T (2021) A Persistent Homology Approach to Heart Rate Variability Analysis With an Application to Sleep-Wake Classification. Front. Physiol. 12:637684. doi: 10.3389/fphys.2021.637684**
 
 ## Installation
-Installation assumes conda is available to be used for environment creation and Python package management. Ensure a working copy of Anaconda (https://www.anaconda.com/) is installed. This repo also depends on the Delaunay-Rips algorithm(https://github.com/amish-mishra/cechmate_DR) for computing the Delaunay-Rips filtration. From the root directory of this repository type the following commands:
+Installation assumes conda is available to be used for environment creation and Python package management. Ensure a working copy of Anaconda (https://www.anaconda.com/) is installed. This repo also depends on the Delaunay-Rips algorithm (https://github.com/amish-mishra/cechmate_DR) for computing the Delaunay-Rips filtration. From the root directory of this repository type the following commands:
 
 ```
 conda env create -f del_rips_sleep_wake_classification_environment.yml
