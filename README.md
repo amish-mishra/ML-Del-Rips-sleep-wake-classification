@@ -13,7 +13,7 @@ Installation assumes conda is available to be used for environment creation and 
 conda env create -f del_rips_sleep_wake_classification_environment.yml
 conda activate del_rips_sleep_wake_classification
 python -m ipykernel install --user --name=del_rips_sleep_wake_classification
-pip install git+git://github.com/amish-mishra/cechmate_DR.git
+pip install git+https://github.com/amish-mishra/cechmate_DR.git
 jupyter notebook
 ```
 
