@@ -17,7 +17,7 @@ pip install git+https://github.com/amish-mishra/cechmate_DR.git
 jupyter notebook
 ```
 
-The first command creates a new conda environment and installs into it Python 3.8.5 and the exact Python packages and versions needed to run the code included in this repository.  
+The first command creates a new conda environment and installs into it Python 3.9.13 and the exact Python packages and versions needed to run the code included in this repository.  
 The second command activates the newly created environment.  
 The third command makes the newly installed environment available for use within Juypyter notebooks.  
 The fourth command installs the modified cechmate package with the Delaunay-Rips method.  
