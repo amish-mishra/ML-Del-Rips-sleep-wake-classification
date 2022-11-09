@@ -219,8 +219,6 @@ def generate_pers_stats_table(directory, filtration_method, max_num_files, dimen
             if verbose: print('Loading', filename)
             data = pandas.read_csv(filename, header=None).iloc[:, :]
             for c in data:
-                # if patient == 3 and c == 222:
-                #     continue    # skip this patient's 222 epoch due to problems with degenerate facets in del-triangulation
                 # embed data one epoch at a time
                 epoch_data = data[c]
                 curr_sleep_stage = stages_dict[data[c][120]]

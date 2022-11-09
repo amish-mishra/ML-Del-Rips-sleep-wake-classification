@@ -1,6 +1,6 @@
 # Author: Amish Mishra
 # Date: June 6, 2022
-# README: This file validates classifiers on the CGMH-validation data then it generates some model accuracy metrics
+# README: This file validates classifiers on the CGMH validation data, then it generates some model accuracy metrics
 
 from sklearn import metrics
 import pandas

@@ -1,6 +1,6 @@
 # Author: Amish Mishra
 # Date: October 7, 2022
-# README: This file trains an ML classifier on the CGMH-training data. Instead of manually downsampling, I use
+# README: This file trains an ML classifier on the CGMH training data. Instead of manually downsampling, I use
 # SVC's in built function to deal with the imbalanced dataset
 
 from sklearn.svm import SVC
