@@ -149,7 +149,7 @@ def calculate_8_stats(arr):
     if np.any(arr): # If the arr is non-empty, then compute the stats; otherwise, leave as 0's
         avg = np.mean(arr)
         std_dev = np.std(arr)
-        if len(arr) == 1:   # Array only has one point, so skew and kurtosis cannot be calculated
+        if len(arr) == 1 or np.isclose(std_dev, 0):   # The std dev is close to 0, so skew and kurtosis cannot be calculated
             skew = 0
             kurtosis = 0
         else:
