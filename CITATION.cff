@@ -1,0 +1,24 @@
+# This CITATION.cff file was generated with cffinit.
+# Visit https://bit.ly/cffinit to generate yours today!
+
+cff-version: 1.2.0
+title: ' ML_Del-Rips_sleep_wake_classification'
+message: >-
+  If you use this software, please cite it using the
+  metadata from this file.
+type: software
+authors:
+  - given-names: Amish Mishra
+    email: amishra2019@fau.edu
+    affiliation: Florida Atlantic University
+    orcid: 'https://orcid.org/0000-0002-7162-3155'
+repository-code: >-
+  https://github.com/amish-mishra/ML_Del-Rips_sleep_wake_classification
+abstract: >-
+  This repository demonstrates the application of the
+  Delaunay-Rips complex by classifying a patient's
+  sleep stage as sleep/wake based on heart rate data.
+
+  The file main.ipynb guides the user through the
+  process of reproducing the results of our data
+  analysis.
