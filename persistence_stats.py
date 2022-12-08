@@ -220,7 +220,7 @@ def generate_pers_stats_table(directory, filtration_method, max_num_files, dimen
             data = pandas.read_csv(filename, header=None).iloc[:, :]
             for c in data:
                 # embed data one epoch at a time
-                epoch_data = data[c]
+                epoch_data = data[c][:120]
                 curr_sleep_stage = stages_dict[data[c][120]]
                 embedded_data = delay_embedding(epoch_data, dimen=dimension, delay=5, stride=1)
                 # plot(embedded_data, title=curr_sleep_stage)
